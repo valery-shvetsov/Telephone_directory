@@ -1,4 +1,7 @@
 import time
+import colorama
+from colorama import Fore, Back, Style
+colorama.init()
 
 def error_input():
     print('\033[5;31mОшибка!')
@@ -48,13 +51,20 @@ def search_contact():
 def add_contact():
     print('\033[3mДобавление контакта\033[0m')
     print(50 * "-")
-    contact_surname = input('Введите фамилию ')  # plain text
-    contact_name = input('Введите имя ')  # DD-MM-YY
-    contact_number = input('Введите номер телефона')
-    commentary = input('Комментарий')
+    print(Fore.GREEN)
+    contact_surname = input('Введите фамилию: ')  # plain text
+    print(Fore.YELLOW)
+    contact_name = input('Введите имя: ')  # 
+    print(Fore.CYAN)
+    contact_number = input('Введите номер телефона: ')
+    print(Fore.MAGENTA)
+    commentary = input('Комментарий: ')
+    print(Style.RESET_ALL)
     contact = [{'contact_id': '', 'surname': contact_surname, 'name': contact_name, 'phone': contact_number,
                 'comment': commentary}, ]
     return contact  # возвращение списка словаря
+
+
 
 def change_contact():
     print('\033[4mИзменить контакт:\033[0m')
